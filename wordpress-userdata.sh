@@ -1,16 +1,21 @@
 #!/bin/bash -xv
 
-DB_HOST=shigemi-db.cx3qqr5ityu0.us-east-1.rds.amazonaws.com
-DB_USER=shigemi
-DB_PASSWORD=shigemipassword
+# 以下のDB_HOST, DB_USER, DB_PASSWORD の値をRDSの情報に変更してあげる
+DB_HOST=seminar-db.cx3qqr5ityu0.us-east-1.rds.amazonaws.com
+DB_USER=seminar
+DB_PASSWORD=seminarpassword
+
+# WordPress configs
 WP_ACCESS_RANGE=10.0.0.0/255.255.0.0
+
+# MySQL user wordpress password
 WP_PASSWORD=CXQwJxMXT4sB
 
 
 yum update -y
 yum install -y httpd mariadb
 amazon-linux-extras install php7.2
-yum install php-mysqlnd
+yum install -y php-mysqlnd
 
 cat << DDL > /opt/wordpress.ddl
 CREATE DATABASE wordpress;
