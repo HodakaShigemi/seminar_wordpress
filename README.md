@@ -5,7 +5,7 @@ script and cloudformation template used in seminar
 
 `userdata.sh`
 
-WordPressのセットアップをするスクリプト。EC2作成時のUserdataに使用。
+WordPressのセットアップをするスクリプト。EC2作成時のUserdataに使用。<br>
 以下の変数を実環境に設定して使用。
 
 - DB_HOST=${RDSのエンドポイント}
@@ -16,7 +16,7 @@ WordPressのセットアップをするスクリプト。EC2作成時のUserdata
 
 `wordpress_stack.yml`
 
-セミナーで作成した構成（VPC,ELB,EC2,RDS）を作成するCloudFormationのテンプレート
+セミナーで作成した構成（VPC,ELB,EC2,RDS）を作成するCloudFormationのテンプレート<br>
 以下のパラメータについては環境に合わせて変更してあげる必要がある
 
-- SshKey: AWSに登録しているSSH鍵の名前。EC2インスタンス作成時に、この鍵でログインできるようにAWSが設定してくれる。 `ssh ec2-user@${EC2のIPアドレス} -i ${SSH鍵へのパス}`
+- SshKey: AWSに登録しているSSH鍵の名前。EC2インスタンス作成時に、この鍵でログインできるようにAWSが設定してくれる。<br>`ssh ec2-user@${EC2のIPアドレス} -i ${SSH鍵へのパス}`
